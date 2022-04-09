@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Lobster&family=Pacifico&family=Quintessential&family=Staatliches&family=Supermercado+One&display=swap");
+
+/* font-family: 'Comforter', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Quintessential', cursive;
+font-family: 'Staatliches', cursive;
+font-family: 'Supermercado One', cursive; */
+
+:root {
+  --golden-color: #ffd700;
+  --primary-color: #222;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 85%;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+///////////////////////////////////////////////
+///////////////////////////////////////////////
+
+@import "./Mobiles/_mobiles.scss";
+@import "./Utils/_utils.scss";

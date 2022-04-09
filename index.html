@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDev</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+      <!-- Hamburger menu -->
+        <div class="center">
+          <div></div>
+        </div>
+
+        <!-- Nav -->
+      <nav class="nav">
+        <!-- ul class flex--row flex--evenly on desktop // ul class flex--column on mobiles -->
+        <ul class="list__container flex--column flex--center">
+          <li class="nav__option" data-option="coins"> Golden Coins </li>
+          <li class="nav__option" data-option="bars"> Golden bars </li>
+          <a href="" class="nav__option" data-option="terms"> Terms and conditions </a>
+          <a href="" class="nav__option" data-option="about"> About us </a>
+          <button class="nav__button">
+            <i class="fas fa-shopping-cart" title="Go to Shopping Cart"></i>
+          </button>
+        </ul>
+        <div class="nav__gold-course">
+          <h4 class="font-thin-italic">
+            <!-- TODO: javascript API every 15/20min downloading price  -->
+            Current gold rate:
+            <span class="font-weight-700">$57.77 / 1g</span> |
+            <span class="font-weight-700">$1,797.06 / 1oz.</span>
+          </h4>
+        </div>
+      </nav>
+
+      <!-- Header -->
+      <header class="header border__bottom">
+        <h1 class="header__title golden-color">
+          <span> Golden Archangel's Store</span>
+        </h1>
+        <h2 class="header__motto font-thin-italic">
+          We are selling with a <br>
+          <span class="golden-color">golden standard!</span>
+        </h2>
+        <!-- Will be added with javascript -->
+        <h3>Scroll down to see more!</h3>
+      </header>
+
+      <!-- Main -->
+      <!-- All coins' prices will be updated once for 6h according to the course -->
+      <main class="main grid--main">
+
+        <!-- Golden coins -->
+        <section class="golden-items__container margin__top--sections border__bottom" id="coins" >
+          <h2 class="golden-item--header font-thin-italic golden-color shining__borders">Golden coins:</h2>
+          <figure class="golden-item flex--product eagle" data-coin="1">
+            <img src="./images/coins/eagle.jpg" alt="" class="golden-item--image" />
+            <h3 class="golden-item--price">$1749.33</h3>
+            <a class="golden-item--description" href="#"
+              >American Egg'le 1 oz.</a
+            >
+          </figure>
+          <figure class="golden-item flex--product kangaroo" data-coin="2">
+            <img src="./images/coins/kangaroo.jpg" alt="" class="golden-item--image" />
+            <h3 class="golden-item--price">$1822.46</h3>
+            <a class="golden-item--description" href="#"
+              >Austrian Kangaroo 1 oz.</a
+            >
+          </figure>
+          <figure class="golden-item flex philharmonic" data-coin="3">
+            <img src="./images/coins/philharmonic.jpg" alt="" class="golden-item--image" />
+            <h3 class="golden-item--price">$1781.98</h3>
+            <a class="golden-item--description" href="#"
+              >Phil Harmonic 1 oz.</a
+            >
+          </figure>
+          <figure class="golden-item flex krugerand" data-coin="4">
+            <img src="./images/coins/krugerand.jpg" alt="" class="golden-item--image" />
+            <h3 class="golden-item--price">$1781.98</h3>
+            <a class="golden-item--description" href="#"
+              >RPA Coin 1 oz.</a
+            >
+          </figure>
+          <figure class="golden-item flex lipa" data-coin="5">
+            <img src="./images/coins/lipa.jpg" alt="" class="golden-item--image" />
+            <h3 class="golden-item--price">$1781.98</h3>
+            <a class="golden-item--description" href="#"
+              >Liść Lipy 1 oz.</a
+            >
+          </figure>
+          <figure class="golden-item flex bison" data-coin="6">
+            <img src="./images/coins/bison.jpg" alt="" class="golden-item--image" />
+            <h3 class="golden-item--price">$1781.98</h3>
+            <a class="golden-item--description" href="#"
+              >American Żubr 1 oz.</a
+            >
+          </figure>
+        </section>
+
+        <!-- Golden bars -->
+        <section class="golden-bars__container margin__top--sections border__bottom" id="bars">
+          <h2 class="golden-item--header font-thin-italic golden-color shining__borders">Golden bars:</h2>
+          <figure class="golden-item flex--product" data-bar="1">
+            <img src="./images/coins/sztabka10g.jpg" alt="" class="golden-item--image" />
+            <p class="golden-item--price">$529.33</p>
+            <a class="golden-item--description" href="#"
+              >Almost Golden Bar 10g</a
+            >
+          </figure>
+          <figure class="golden-item flex--product" data-bar="2">
+            <img src="./images/coins/sztabka10g.jpg" alt="" class="golden-item--image" />
+            <p class="golden-item--price">$529.33</p>
+            <a class="golden-item--description" href="#"
+              >Almost Golden Bar 1oz</a
+            >
+          </figure>
+        </section>
+      </main>
+
+       <footer class="copyright golden-color">
+         <p class="made-by font-weight-700">&copy; Made by DasminX - WebDev.</p> 
+         <p class="dont-copy font-thin-italic">Don't copy that, unless you want to
+          hire me.</p>
+      </footer> 
+
+    </div>
+    <script type="module" src="./js/main.js"></script>
+  </body>
+</html>

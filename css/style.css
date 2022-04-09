@@ -1,0 +1,428 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Lobster&family=Pacifico&family=Quintessential&family=Staatliches&family=Supermercado+One&display=swap");
+/* font-family: 'Comforter', cursive;
+font-family: 'Lobster', cursive;
+font-family: 'Pacifico', cursive;
+font-family: 'Quintessential', cursive;
+font-family: 'Staatliches', cursive;
+font-family: 'Supermercado One', cursive; */
+:root {
+  --golden-color: #ffd700;
+  --primary-color: #222;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  width: 85%;
+  overflow-x: hidden;
+  margin: 0 auto;
+}
+
+/* Hamburger */
+.center {
+  cursor: pointer;
+  top: 6%;
+  right: 0%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  position: fixed;
+  width: 2.5rem;
+  z-index: 101;
+}
+
+.center:before,
+.center:after,
+.center div {
+  background-color: var(--primary-color);
+  content: "";
+  display: block;
+  height: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 0.7rem 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.center.hamburger__active:before {
+  -webkit-transform: translateY(1.2rem) rotate(135deg);
+          transform: translateY(1.2rem) rotate(135deg);
+}
+
+.center.hamburger__active:after {
+  -webkit-transform: translateY(-1.2rem) rotate(-135deg);
+          transform: translateY(-1.2rem) rotate(-135deg);
+}
+
+.center.hamburger__active div {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+
+/* Styling NAV elements */
+.nav {
+  background-color: white;
+  border-bottom: 0.4rem dashed var(--golden-color);
+  font-family: "Pacifico", cursive;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+ul {
+  list-style: none;
+}
+
+ul .nav__option {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  padding: 10px 20px;
+  word-spacing: 0.3rem;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+ul .nav__option:first-child {
+  margin-top: 1rem;
+}
+
+ul .nav__option:active {
+  background-color: var(--golden-color);
+}
+
+ul .nav__button {
+  border: none;
+  font-size: 3rem;
+  padding: 1.5rem;
+  /* I HAVE TO DO SOMETHING TO MAKE IT EVENLY AND RESPONISVE */
+}
+
+ul .nav__button:hover {
+  cursor: pointer;
+}
+
+.nav__gold-course {
+  position: fixed;
+  border-top: 1px solid var(--golden-color);
+  font-family: Arial, Helvetica, sans-serif;
+  left: 0;
+  position: relative;
+  text-align: center;
+}
+
+/* Styling header */
+.header {
+  color: var(--primary-color);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  -ms-grid-rows: 3fr 2fr 1fr;
+      grid-template-rows: 3fr 2fr 1fr;
+  height: 100vh;
+  text-align: center;
+  -webkit-perspective: 45rem;
+          perspective: 45rem;
+}
+
+.header__title {
+  -webkit-animation: moveTitle 15s infinite both;
+          animation: moveTitle 15s infinite both;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  border-radius: 4rem;
+  -webkit-box-shadow: 0.2rem 0.2rem 1rem black;
+          box-shadow: 0.2rem 0.2rem 1rem black;
+  font-family: "Quintessential", cursive;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-transform: rotateY(-10deg);
+          transform: rotateY(-10deg);
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.header__title span {
+  display: block;
+  -webkit-transform: skew(-15deg);
+          transform: skew(-15deg);
+}
+
+.header__motto {
+  font-family: "Pacifico", cursive;
+  margin: 3.5rem auto;
+}
+
+.header__motto span {
+  border-radius: 30%;
+  color: var(--primary-color);
+  font-size: 150%;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+}
+
+.header h3 {
+  -webkit-animation: pulse 3s infinite both;
+          animation: pulse 3s infinite both;
+  font-family: "Supermercado One", cursive;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-bottom: 10%;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(1.15) translateY(-60%);
+            transform: scale(1.15) translateY(-60%);
+    -webkit-box-shadow: 0 0 3rem 1rem var(--golden-color);
+            box-shadow: 0 0 3rem 1rem var(--golden-color);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  40% {
+    -webkit-transform: scale(1.15) translateY(-60%);
+            transform: scale(1.15) translateY(-60%);
+    -webkit-box-shadow: 0 0 3rem 1rem var(--golden-color);
+            box-shadow: 0 0 3rem 1rem var(--golden-color);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+@-webkit-keyframes moveTitle {
+  0% {
+    -webkit-transform: rotateY(-5deg);
+            transform: rotateY(-5deg);
+  }
+  25% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(5deg);
+            transform: rotateY(5deg);
+  }
+  75% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-5deg);
+            transform: rotateY(-5deg);
+  }
+}
+
+@keyframes moveTitle {
+  0% {
+    -webkit-transform: rotateY(-5deg);
+            transform: rotateY(-5deg);
+  }
+  25% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  50% {
+    -webkit-transform: rotateY(5deg);
+            transform: rotateY(5deg);
+  }
+  75% {
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-5deg);
+            transform: rotateY(-5deg);
+  }
+}
+
+/* Main */
+.main {
+  min-height: 100vh;
+}
+
+.golden-coins__container, .golden-bars__container {
+  justify-items: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr (3fr)[3];
+      grid-template-rows: 1fr repeat(3, 3fr);
+  width: 100%;
+}
+
+.golden-bars__container {
+  -ms-grid-rows: 1fr (3fr)[2];
+      grid-template-rows: 1fr repeat(2, 3fr);
+}
+
+.golden-item--header {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  font-family: "Pacifico", cursive;
+  font-weight: 200;
+  -ms-grid-column-align: stretch;
+      justify-self: stretch;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.golden-item {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 5rem auto;
+  width: 60%;
+  text-align: center;
+}
+
+.golden-item--image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.golden-item--price {
+  background-color: var(--golden-color);
+  font-size: 1.6rem;
+  margin: 0.4rem auto;
+  width: 50%;
+}
+
+.golden-item--description {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  text-decoration: underline;
+}
+
+/* Footer */
+.copyright {
+  font-size: 1.7rem;
+  margin: 5% 0;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.copyright .made-by {
+  font-family: "Staatliches", cursive;
+  letter-spacing: 0.2rem;
+}
+
+.copyright .dont-copy {
+  font-family: "Quintessential", cursive;
+  letter-spacing: 0;
+}
+
+/* Specifying fonts */
+h1 {
+  font-size: 3.9rem;
+}
+
+h2 {
+  font-size: 2.6rem;
+}
+
+h3 {
+  font-size: 1.9rem;
+}
+
+h4 {
+  font-size: 1.3rem;
+}
+
+.font-thin-italic {
+  font-style: italic;
+  font-weight: 300;
+}
+
+.font-weight-700 {
+  font-weight: 700;
+}
+
+/* Styling specific colors */
+.golden-color {
+  background-color: var(--golden-color);
+}
+
+/* Flex classes */
+.flex, .flex--column, .flex--center, .flex--evenly, .flex--around {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.flex--column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.flex--center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.flex--evenly {
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.flex--around {
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+/* Effects */
+.border__bottom {
+  border-bottom: 0.3rem solid #c8c8c8;
+  border-radius: 2%;
+  -webkit-box-shadow: 0.3rem solid #c8c8c8, 0.6rem solid #fff, 0.9rem solid #c8c8c8;
+          box-shadow: 0.3rem solid #c8c8c8, 0.6rem solid #fff, 0.9rem solid #c8c8c8;
+}
+
+.shining__borders {
+  -webkit-box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem var(--primary-color), -0.1rem -0.1rem 0.8rem 0.1rem var(--primary-color);
+          box-shadow: 0.1rem 0.1rem 0.8rem 0.1rem var(--primary-color), -0.1rem -0.1rem 0.8rem 0.1rem var(--primary-color);
+}
+
+/* Layout */
+.margin__top--sections {
+  margin-top: 15%;
+}
+/*# sourceMappingURL=style.css.map */

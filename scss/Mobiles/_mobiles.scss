@@ -1,0 +1,251 @@
+/* Hamburger */
+// https://codepen.io/Bilal1909/pen/KKdrmRP - change from hover to active
+
+.center {
+  cursor: pointer;
+  top: 6%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 2.5rem;
+  z-index: 101;
+}
+
+.center:before,
+.center:after,
+.center div {
+  background-color: var(--primary-color);
+  content: "";
+  display: block;
+  height: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 0.7rem 0;
+  transition: 0.5s;
+}
+.center.hamburger__active:before {
+  transform: translateY(1.2rem) rotate(135deg);
+}
+.center.hamburger__active:after {
+  transform: translateY(-1.2rem) rotate(-135deg);
+}
+.center.hamburger__active div {
+  transform: scale(0);
+}
+
+/* Styling NAV elements */
+.nav {
+  background-color: white;
+  border-bottom: 0.4rem dashed var(--golden-color);
+  font-family: "Pacifico", cursive;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+ul {
+  list-style: none;
+
+  .nav__option {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    word-spacing: 0.3rem;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    &:active {
+      background-color: var(--golden-color);
+    }
+  }
+
+  .nav__button {
+    border: none;
+    font-size: 3rem;
+    padding: 1.5rem;
+    /* I HAVE TO DO SOMETHING TO MAKE IT EVENLY AND RESPONISVE */
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.nav__gold-course {
+  position: fixed;
+  border-top: 1px solid var(--golden-color);
+  font-family: Arial, Helvetica, sans-serif;
+  left: 0;
+  position: relative;
+  text-align: center;
+}
+
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////
+
+/* Styling header */
+
+.header {
+  color: var(--primary-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 3fr 2fr 1fr;
+  height: 100vh;
+  text-align: center;
+  perspective: 45rem;
+
+  &__title {
+    animation: moveTitle 15s infinite both;
+    align-self: center;
+    border-radius: 4rem;
+    box-shadow: 0.2rem 0.2rem 1rem black;
+    font-family: "Quintessential", cursive;
+    justify-self: center;
+    transform: rotateY(-10deg);
+    transition: 0.6s;
+
+    span {
+      display: block;
+      transform: skew(-15deg);
+    }
+  }
+
+  &__motto {
+    font-family: "Pacifico", cursive;
+    margin: 3.5rem auto;
+
+    span {
+      border-radius: 30%;
+      color: var(--primary-color);
+      font-size: 150%;
+      font-weight: bold;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  h3 {
+    animation: pulse 3s infinite both;
+    font-family: "Supermercado One", cursive;
+    align-self: flex-end;
+    margin-bottom: 10%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.15) translateY(-60%);
+    box-shadow: 0 0 3rem 1rem var(--golden-color);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes moveTitle {
+  0% {
+    transform: rotateY(-5deg);
+  }
+
+  25% {
+    transform: rotateY(0deg);
+  }
+
+  50% {
+    transform: rotateY(5deg);
+  }
+
+  75% {
+    transform: rotateY(0deg);
+  }
+
+  100% {
+    transform: rotateY(-5deg);
+  }
+}
+
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////
+
+/* Main */
+
+.main {
+  min-height: 100vh;
+}
+
+.golden-coins__container {
+  justify-items: center;
+  display: grid;
+  grid-template-rows: 1fr repeat(3, 3fr);
+  width: 100%;
+}
+
+.golden-bars__container {
+  @extend .golden-coins__container;
+  grid-template-rows: 1fr repeat(2, 3fr);
+}
+
+.golden-item--header {
+  align-self: center;
+  font-family: "Pacifico", cursive;
+  font-weight: 200;
+  justify-self: stretch;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.golden-item {
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 5rem auto;
+  width: 60%;
+  text-align: center;
+
+  &--image {
+    object-fit: cover;
+    width: 100%;
+  }
+
+  &--price {
+    background-color: var(--golden-color);
+    font-size: 1.6rem;
+    margin: 0.4rem auto;
+    width: 50%;
+  }
+
+  &--description {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    text-decoration: underline;
+  }
+}
+
+/////////////////////////////////////
+/* Footer */
+
+.copyright {
+  font-size: 1.7rem;
+  margin: 5% 0;
+  padding: 2rem 0;
+  text-align: center;
+
+  .made-by {
+    font-family: "Staatliches", cursive;
+    letter-spacing: 0.2rem;
+  }
+
+  .dont-copy {
+    font-family: "Quintessential", cursive;
+    letter-spacing: 0;
+  }
+}
