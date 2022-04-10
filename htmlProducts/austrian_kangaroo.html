@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebDev</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/x-icon" href="../images/favicon.ico" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+  <body>
+      <!-- Hamburger menu -->
+      <div class="center"><div></div></div>
+
+      <!-- Nav -->
+      <nav class="nav">
+        <ul class="list__container flex--column flex--center">
+          <a href="" class="nav__option" data-option="about"> About us </a>
+          <a href="" class="nav__option" data-option="terms"> Terms and conditions </a>
+          <button class="nav__button">
+            <i class="fas fa-shopping-cart" title="Go to Shopping Cart"></i>
+          </button>
+        </ul>
+
+        <div class="nav__gold-course">
+          <h4 class="font-thin-italic">
+            Current gold rate (16:22:31):
+            <!-- <span class="font-weight-700">$57.77 / 1g</span> | -->
+            <span class="font-weight-700">$1,797.06 / 1oz.</span>
+          </h4>
+        </div>
+      </nav>
+
+      <!-- Button to go back HOMEPAGE -->
+      <button class="go-back"><i class="fas fa-arrow-left"></i></button>
+
+
+      <figure class="golden-item__product eagle border__bottom" data-coin="2">
+            <img src="../images/coinsNbars/kangaroo.jpg" alt="" class="golden-item__product--image" />
+            <h3 class="golden-item__product--price">$1749.33</h3>
+            <p class="golden-item__product--title">Austrian Kangaroo 1 oz.<p>
+            <div class="golden-item__product--amount flex--center font-thin-italic">
+              <h3>Amount:</h3>
+              <div class="decrease font-weight-700">-</div>
+              <input type="number" value="1" step="1" min="1" max="10">
+              <div class="increase font-weight-700">+</div>
+            </div>
+            <button class="add-to-cart golden-color shining__borders">Add to cart</button>
+      </figure>
+          
+      <section class="product__about border__bottom">
+        <h2 class="product__about--header font-thin-italic flex--center golden-color shining__borders">Austrian Kangaroo</h2>
+        <h3 class="product__about--description">You're right... it's <span class="golden-color">Austrian Kangaroo</span>, not Australian... Mined in Vienna, with <span class="golden-color">respect</span>, <span class="golden-color">care</span>, and with <span class="golden-color"> professional equipment</span>.</h3>
+        <br>
+        <h3 class="product__about--description">It's great reflection of humans <span class="golden-color">richness</span>. Get it before others will!</h3>
+      </section>
+
+        <footer class="copyright golden-color">
+         <h3 class="made-by font-weight-700">&copy; Made by DasminX - WebDev.</h3> 
+         <h4 class="dont-copy font-thin-italic">Don't copy that, unless you want to
+          hire me.</h4>
+        </footer> 
+
+    </div>
+    <script type="module" src="../js/main.js"></script>
+  </body>
+</html>

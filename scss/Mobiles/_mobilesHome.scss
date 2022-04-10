@@ -162,7 +162,6 @@ ul {
 .golden-item--header {
   align-self: center;
   font-family: "Pacifico", cursive;
-  font-weight: 200;
   justify-self: stretch;
   margin-bottom: 2rem;
   padding: 1rem 2rem;
@@ -170,15 +169,14 @@ ul {
 }
 
 .golden-item {
-  flex-direction: column;
   flex-wrap: wrap;
   margin: 5rem auto;
   text-align: center;
-  width: 60%;
+  width: 100%;
 
   &--image {
     object-fit: cover;
-    width: 100%;
+    width: 75%;
   }
 
   &--price {
