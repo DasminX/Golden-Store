@@ -1,0 +1,111 @@
+/* Button go back */
+.goBack {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 4%;
+  padding: 1rem 2rem;
+  border: none;
+  background-color: white;
+
+  i {
+    font-size: 3rem;
+  }
+}
+
+/* Golden item */ /* Golden item */
+.golden-item {
+  flex-direction: row;
+  width: 100%;
+
+  &--image {
+    margin-bottom: 5%;
+    margin-top: 15%;
+    width: 90%;
+  }
+
+  &--price {
+    font-size: 2rem;
+    margin: 0.4rem auto;
+    width: 100%;
+  }
+
+  &--title {
+    color: var(--primary-color);
+    font-family: "Lobster", cursive;
+    font-size: 2rem;
+  }
+
+  &--amount {
+    font-family: "Staatliches", cursive;
+    letter-spacing: 0.2rem;
+    margin: 3rem auto 1rem 1rem;
+    width: 90%;
+    height: 30%;
+
+    h3 {
+      font-size: 2rem;
+    }
+
+    .add,
+    .remove {
+      align-self: center;
+      font-family: "Staatliches", cursive;
+      font-size: 2.6rem;
+    }
+
+    .remove {
+      margin-left: auto;
+    }
+
+    input {
+      font-size: 1.8rem;
+      margin: 0 1rem;
+      text-align: center;
+      width: 20%;
+    }
+  }
+
+  .add-to-cart {
+    @extend .golden-item--header;
+    border: none;
+    border-radius: 5%;
+    font-size: 1.8rem;
+    margin: 8% auto 15%;
+    transition: 0.1s;
+    width: 95%;
+
+    &:active {
+      transform: scale(0.96);
+    }
+  }
+}
+
+/////////////////////////////////////////////////
+/////////////////////////////////////////////////
+/* Section product about */
+
+.product__about {
+  &--header {
+    font-family: "Lobster", cursive;
+    padding: 1.2rem 2rem;
+  }
+
+  &--description {
+    font-family: "Quintessential", cursive;
+    line-height: 190%;
+    margin: 2rem auto 0;
+    width: 90%;
+
+    span {
+      border-radius: 10%;
+      padding: 0.1rem;
+    }
+
+    &:last-child {
+      margin-bottom: 10%;
+    }
+  }
+}

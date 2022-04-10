@@ -31,5 +31,13 @@ body {
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 
-@import "./Mobiles/_mobiles.scss";
 @import "./Utils/_utils.scss";
+
+@media (max-width: 900px) {
+  @import "./Mobiles/_mobilesHome.scss";
+  @import "./Mobiles/_mobilesProduct.scss";
+}
+
+@media (min-width: 901px) {
+  @import "./Desktop/_desktop.scss";
+}

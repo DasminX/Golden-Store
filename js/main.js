@@ -1,5 +1,8 @@
-import { showNavigation, hamburger } from "./_Navigation.js"
-import goldAPI from "./_goldAPI.js"
+import { showNavigation, hamburger } from "./Navigation.js"
+import goldAPI from "./GoldAPI.js"
+import { goBack, buttonGoBack } from "./GoBack.js"
 
 hamburger.addEventListener("click", showNavigation)
-// goldAPI()
+//  goldAPI()
+
+buttonGoBack.addEventListener("click", goBack)

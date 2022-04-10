@@ -34,6 +34,7 @@ h4 {
 
 ///////////////////////////////////////////////
 /* Flex classes */
+
 .flex {
   display: flex;
 }
@@ -49,23 +50,12 @@ h4 {
   justify-content: center;
 }
 
-.flex--evenly {
-  @extend .flex;
-  justify-content: space-evenly;
-}
-
-.flex--around {
-  @extend .flex;
-  justify-content: space-around;
-}
-
 ///////////////////////////////////////
 /* Effects */
 
 .border__bottom {
   border-bottom: 0.3rem solid #c8c8c8;
-  border-radius: 2%;
-  box-shadow: 0.3rem solid #c8c8c8, 0.6rem solid #fff, 0.9rem solid #c8c8c8;
+  border-radius: 3%;
 }
 
 .shining__borders {
@@ -78,4 +68,40 @@ h4 {
 
 .margin__top--sections {
   margin-top: 15%;
+}
+
+///////////////////////////////////////
+/* Hamburger icon and action */
+
+// https://codepen.io/Bilal1909/pen/KKdrmRP - change from hover to active
+
+.center {
+  cursor: pointer;
+  top: 6%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 2.5rem;
+  z-index: 101;
+}
+
+.center:before,
+.center:after,
+.center div {
+  background-color: var(--primary-color);
+  content: "";
+  display: block;
+  height: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 0.7rem 0;
+  transition: 0.5s;
+}
+.center.hamburger__active:before {
+  transform: translateY(1.2rem) rotate(135deg);
+}
+.center.hamburger__active:after {
+  transform: translateY(-1.2rem) rotate(-135deg);
+}
+.center.hamburger__active div {
+  transform: scale(0);
 }
