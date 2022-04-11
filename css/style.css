@@ -470,13 +470,13 @@ h4 {
   .golden-item__product .add-to-cart {
     border: none;
     border-radius: 5%;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     letter-spacing: 0.1rem;
     margin: 8% auto 15%;
     text-transform: uppercase;
     -webkit-transition: 0.1s;
     transition: 0.1s;
-    width: 95%;
+    width: 60%;
   }
   .golden-item__product .add-to-cart:active {
     -webkit-transform: scale(0.96);

@@ -75,12 +75,12 @@
     @extend .golden-item--header;
     border: none;
     border-radius: 5%;
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     letter-spacing: 0.1rem;
     margin: 8% auto 15%;
     text-transform: uppercase;
     transition: 0.1s;
-    width: 95%;
+    width: 60%;
 
     &:active {
       transform: scale(0.96);
