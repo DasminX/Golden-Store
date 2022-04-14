@@ -25,6 +25,8 @@ const goToSection = (e) => {
   const scrollTarget = document.getElementById(e.target.dataset.option)
   const scrollY = -25
 
+  e.target.href ? (location.href = e.target.href) : false
+
   if (!scrollTarget) return
 
   scrollTarget.previousElementSibling

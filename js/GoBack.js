@@ -1,5 +1,5 @@
 export const goBack = () => {
-  location.href = `../index.html`
+  history.back()
 }
 
-export const buttonGoBack = document.querySelector(".go-back")
+export const buttonGoBack = document.querySelector(".go-back--btn")

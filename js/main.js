@@ -2,6 +2,7 @@ import { showNavigation, hamburger } from "./Navigation.js"
 import goldAPI from "./GoldAPI.js"
 import { goBack, buttonGoBack } from "./GoBack.js"
 import { amountContainer, onChangeAmount } from "./AddProductToCart.js"
+import { main, goToProduct } from "./ProductComponent.js"
 
 hamburger.addEventListener("click", showNavigation)
 //  goldAPI()

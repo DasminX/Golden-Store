@@ -1,42 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Lobster&family=Pacifico&family=Quintessential&family=Staatliches&family=Supermercado+One&display=swap");
-
-/* font-family: 'Comforter', cursive;
-font-family: 'Lobster', cursive;
-font-family: 'Pacifico', cursive;
-font-family: 'Quintessential', cursive;
-font-family: 'Staatliches', cursive;
-font-family: 'Supermercado One', cursive; */
-
-:root {
-  --golden-color: #ffd700;
-  --primary-color: #222;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  width: 85%;
-  overflow-x: hidden;
-  margin: 0 auto;
-}
-
 ///////////////////////////////////////////////
 ///////////////////////////////////////////////
 
-@import "./Utils/_utils.scss";
+@import "./Utils/basic";
+@import "./Utils/components";
+@import "./Utils/general";
 
-@media (max-width: 900px) {
-  @import "./Mobiles/_mobilesHome.scss";
-  @import "./Mobiles/_mobilesProduct.scss";
-}
+@import "./Mobiles/_mobilesHome.scss";
+@import "./Mobiles/_mobilesProduct.scss";
+@import "./Mobiles/_mobilesTnC.scss";
 
 @media (min-width: 901px) {
   @import "./Desktop/_desktop.scss";

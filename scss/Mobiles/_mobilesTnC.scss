@@ -1,0 +1,12 @@
+.terms_and_conditions {
+  margin-top: 35%;
+
+  &--header {
+    @extend .golden-item--header;
+    margin-bottom: 15%;
+  }
+
+  &--paragraph {
+    @extend .product__about--description;
+  }
+}

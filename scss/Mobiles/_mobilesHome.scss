@@ -2,7 +2,7 @@
 
 .nav {
   background-color: white;
-  border-bottom: 0.4rem dashed var(--golden-color);
+  border-bottom: 0.4rem dashed $golden-color;
   font-family: "Pacifico", cursive;
   left: 0;
   position: fixed;
@@ -15,20 +15,20 @@ ul {
   list-style: none;
 
   .nav__option {
-    color: var(--primary-color);
+    color: $primary-color;
     font-size: 1.8rem;
     padding: 1rem 2rem;
     text-align: center;
     text-decoration: none;
-    word-spacing: 0.3rem;
     width: 100%;
+    word-spacing: 0.3rem;
 
     &:first-child {
       margin-top: 1rem;
     }
 
     &:active {
-      background-color: var(--golden-color);
+      background-color: $golden-color;
     }
   }
 
@@ -41,7 +41,7 @@ ul {
 }
 
 .nav__gold-course {
-  border-top: 0.1rem solid var(--golden-color);
+  border-top: 0.1rem solid $golden-color;
   font-family: Arial, Helvetica, sans-serif;
   position: relative;
   text-align: center;
@@ -52,7 +52,7 @@ ul {
 /* Header */ /* Header */
 
 .header {
-  color: var(--primary-color);
+  color: $primary-color;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 3fr 2fr 1fr;
@@ -82,7 +82,7 @@ ul {
 
     span {
       border-radius: 30%;
-      color: var(--primary-color);
+      color: $primary-color;
       font-size: 150%;
       font-weight: bold;
       padding: 0.4rem 0.8rem;
@@ -127,13 +127,13 @@ ul {
     visibility: 0%;
   }
   45% {
-    box-shadow: 0 0 3rem 1rem var(--golden-color);
+    box-shadow: 0 0 3rem 1rem $golden-color;
     opacity: 1;
     transform: scaleX(1.15);
     visibility: 100%;
   }
   55% {
-    box-shadow: 0 0 3rem 1rem var(--golden-color);
+    box-shadow: 0 0 3rem 1rem $golden-color;
     opacity: 1;
     transform: scaleX(1.15);
     visibility: 100%;
@@ -159,15 +159,6 @@ ul {
   grid-template-rows: 1fr repeat(2, 3fr);
 }
 
-.golden-item--header {
-  align-self: center;
-  font-family: "Pacifico", cursive;
-  justify-self: stretch;
-  margin-bottom: 2rem;
-  padding: 1rem 2rem;
-  text-align: center;
-}
-
 .golden-item {
   flex-wrap: wrap;
   margin: 5rem auto;
@@ -180,14 +171,14 @@ ul {
   }
 
   &--price {
-    background-color: var(--golden-color);
+    background-color: $golden-color;
     font-size: 1.6rem;
     margin: 0.4rem auto;
     width: 50%;
   }
 
   &--link {
-    color: var(--primary-color);
+    color: $primary-color;
     font-size: 1.8rem;
     text-decoration: underline;
   }
