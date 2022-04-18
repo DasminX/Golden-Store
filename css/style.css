@@ -180,6 +180,11 @@ h4 {
   margin-top: 15%;
 }
 
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
 /* Navigation */
 /* Navigation */
 .nav {
@@ -498,8 +503,12 @@ ul .nav__button {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  background-color: white;
+  border: 0.1rem solid #222;
+  border-radius: 50%;
   font-family: "Staatliches", cursive;
-  font-size: 2.6rem;
+  font-size: 1.6rem;
+  padding: 0.2rem 0.8rem;
 }
 
 .golden-item__product--amount .decrease {

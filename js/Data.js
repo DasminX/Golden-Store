@@ -1,4 +1,22 @@
-const products = [
+/* HTML elements */
+
+export const contentWrapper = document.querySelector(".content-wrapper")
+
+export const hamburger = document.querySelector(".center")
+export const nav = document.querySelector(".nav")
+export const goldCourse = nav.querySelector(".nav__gold-course")
+
+export const navHeight = nav.clientHeight
+export const goldCourseHeight = goldCourse.clientHeight
+
+export const listContainer = document.querySelector(".list__container")
+export const header = document.querySelector("header")
+
+export const goBackButton = document.querySelector(".go-back--btn")
+
+/* Data structures */
+
+export const products = [
   {
     name: "American Eagle 1oz",
     id: 1,
@@ -15,7 +33,7 @@ const products = [
     name: "Vienna Philharmonic 1 oz",
     id: 3,
     description: `<h3 class="product__about--description"><span class="golden-color">Vienna Philharmonic coin</span> is Europe's first legal tender gold coin made of <span class="golden-color">genuine 24-carat gold</span> and the first with a <span class="golden-color">denomination expressed in euro</span>. This elegant coin is particularly valued for its <span class="golden-color">impeccable artistic appearance and top quality workmanship</span>.
-      <span class="golden-color"></span></h3>`,
+        <span class="golden-color"></span></h3>`,
     shortcut: "philharmonic",
   },
   {
@@ -40,88 +58,14 @@ const products = [
     name: "Bar 10g",
     id: 7,
     description: `<h3 class="product__about--description"><span class="golden-color">Golden Bar</span> in our offer is produced from gold of <span class="golden-color">the highest purity 999.9</span> and come from the <span class="golden-color">most prestigious mints</span>, accredited by the LBMA (London Bullion Market Association), which is a guarantee of their <span class="golden-color">highest quality and liquidity</span>.
-      </h3>`,
+        </h3>`,
     shortcut: "sztabka",
   },
   {
-    name: "Bar 1oz",
+    name: "Bar 1 oz",
     id: 8,
     description: `<h3 class="product__about--description"><span class="golden-color">Golden Bar</span> in our offer is produced from gold of <span class="golden-color">the highest purity 999.9</span> and come from the <span class="golden-color">most prestigious mints</span>, accredited by the LBMA (London Bullion Market Association), which is a guarantee of their <span class="golden-color">highest quality and liquidity</span>.
-      </h3>`,
+        </h3>`,
     shortcut: "sztabka",
   },
 ]
-
-const main = document.querySelector(".main")
-
-const goToProduct = (e) => {
-  const closestFigure = e.target.closest("figure")
-  if (!closestFigure) return
-  closestFigure.id && e.target.nodeName === "A"
-    ? renderProduct(closestFigure.id)
-    : false
-}
-
-main.addEventListener("click", goToProduct)
-
-const renderProduct = (id) => {
-  const clickedProduct = products.find((product) => product.id === +id)
-
-  document.body.innerHTML = ``
-
-  const html = `
-  <div class="center"><div></div></div>
-
-  <nav class="nav">
-  <ul class="list__container flex--column flex--center">
-  <a href="" class="nav__option" data-option="about"> About us </a>
-    <a href="" class="nav__option" data-option="terms"> Terms and conditions </a>
-    <button class="nav__button">
-    <i class="fas fa-shopping-cart" title="Go to Shopping Cart"></i>
-    </button>
-    </ul>
-
-    <div class="nav__gold-course">
-    <h4 class="font-thin-italic">
-      Current gold rate (16:22:31):
-      <!-- <span class="font-weight-700">$57.77 / 1g</span> | -->
-      <span class="font-weight-700">$1,797.06 / 1oz.</span>
-    </h4>
-  </div>
-</nav>
-
-<button class="go-back--btn"><i class="fas fa-arrow-left"></i></button>
-
-<figure class="golden-item__product ${clickedProduct.shortcut} border__bottom" id=${clickedProduct.id}>
-<img src="../images/coinsNbars/${clickedProduct.shortcut}.jpg" alt="" class="golden-item__product--image margin__top--15" />
-<h3 class="golden-item__product--price">$1749.33</h3>
-      <p class="golden-item__product--title">${clickedProduct.name}<p>
-      <div class="golden-item__product--amount flex--center font-thin-italic">
-      <h3>Amount:</h3>
-      <div class="decrease font-weight-700">-</div>
-      <input type="number" value="1" step="1" min="1" max="10" readonly>
-        <div class="increase font-weight-700">+</div>
-        </div>
-        <button class="add-to-cart golden-color shining__borders">Add to cart <i class="fas fa-shopping-cart"></i></button>
-        </figure>
-    
-        <section class="product__about border__bottom">
-        <h2 class="product__about--header font-thin-italic flex--center golden-color shining__borders">American Eagle</h2>
-  ${clickedProduct.description}
-  <br>
-  <h3 class="product__about--description">It's great reflection of humans <span class="golden-color">richness</span>. Get it before others will!</h3>
-  </section>
-
-  <footer class="copyright golden-color">
-   <h3 class="made-by font-weight-700">&copy; Made by DasminX - WebDev.</h3> 
-   <h4 class="dont-copy font-thin-italic">Don't copy that, unless you want to
-    hire me.</h4>
-  </footer> 
-  
-</div>
-<script type="module" src="../js/main.js"></script>
-`
-  document.body.insertAdjacentHTML("beforeend", html)
-}
-
-export { main, goToProduct }

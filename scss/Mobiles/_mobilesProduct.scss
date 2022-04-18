@@ -37,8 +37,12 @@
     .increase,
     .decrease {
       align-self: center;
+      background-color: white;
+      border: 0.1rem solid $primary-color;
+      border-radius: 50%;
       font-family: "Staatliches", cursive;
-      font-size: 2.6rem;
+      font-size: 1.6rem;
+      padding: 0.2rem 0.8rem;
     }
 
     .decrease {

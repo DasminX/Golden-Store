@@ -1,7 +1,13 @@
-export default async function goldAPI() {
-  const req = await fetch(
-    "https://www.metals-api.com/api/latest?access_key=s&base=XAU&symbols=USD"
-  )
-  const data = await req.json()
-  return ({ USD } = data.rates)
+/* const goldAPI = async () => {
+  const req = await fetch("http://api.nbp.pl/api/cenyzlota")
+  const goldData = await req.json()
+  return { price: goldData[0].cena, date: goldData[0].data }
 }
+
+const goldRates = {
+  price: 268.77,
+  date: "2022-04-15",
+}
+
+export const goldInfo = goldAPI().then((res) => console.log(res))
+ */
