@@ -34,24 +34,9 @@
       font-size: 2rem;
     }
 
-    .increase,
-    .decrease {
-      align-self: center;
-      background-color: white;
-      border: 0.1rem solid $primary-color;
-      border-radius: 50%;
-      font-family: "Staatliches", cursive;
-      font-size: 1.6rem;
-      padding: 0.2rem 0.8rem;
-    }
-
-    .decrease {
-      margin-left: auto;
-    }
-
     input {
       font-size: 1.8rem;
-      margin: 0 1rem;
+      margin: 0 1rem 0 30%;
       text-align: center;
       width: 20%;
     }

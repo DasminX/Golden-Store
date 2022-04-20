@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
+    
+    <div class="overlay hidden"></div>
+    <div class="modal added-to-cart flex hidden ">
+      <h2 class="added-to-cart--heading">You've added an item to cart!</h2>
+      <h4 class="added-to-cart--paragraph ">Currently you've got 2 items in your cart!</h4>
+      <button class="added-to-cart--btn go-to-cart golden-color shining__borders margin__top--15">Go to shopping cart <i class="fas fa-shopping-cart" title="Go to Shopping Cart"></i></button>
+      <button class="added-to-cart--btn btn--close golden-color shining__borders">Close</button>
+    </div>
+
       <!-- Hamburger menu -->
       <div class="center"><div></div></div>
 
@@ -46,6 +55,6 @@
       </footer> 
 
     </div>
-    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/controller.js"></script>
   </body>
 </html>

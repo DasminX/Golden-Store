@@ -1,19 +1,3 @@
-/* HTML elements */
-
-export const contentWrapper = document.querySelector(".content-wrapper")
-
-export const hamburger = document.querySelector(".center")
-export const nav = document.querySelector(".nav")
-export const goldCourse = nav.querySelector(".nav__gold-course")
-
-export const navHeight = nav.clientHeight
-export const goldCourseHeight = goldCourse.clientHeight
-
-export const listContainer = document.querySelector(".list__container")
-export const header = document.querySelector("header")
-
-export const goBackButton = document.querySelector(".go-back--btn")
-
 /* Data structures */
 
 export const products = [
@@ -33,7 +17,7 @@ export const products = [
     name: "Vienna Philharmonic 1 oz",
     id: 3,
     description: `<h3 class="product__about--description"><span class="golden-color">Vienna Philharmonic coin</span> is Europe's first legal tender gold coin made of <span class="golden-color">genuine 24-carat gold</span> and the first with a <span class="golden-color">denomination expressed in euro</span>. This elegant coin is particularly valued for its <span class="golden-color">impeccable artistic appearance and top quality workmanship</span>.
-        <span class="golden-color"></span></h3>`,
+          <span class="golden-color"></span></h3>`,
     shortcut: "philharmonic",
   },
   {
@@ -58,14 +42,28 @@ export const products = [
     name: "Bar 10g",
     id: 7,
     description: `<h3 class="product__about--description"><span class="golden-color">Golden Bar</span> in our offer is produced from gold of <span class="golden-color">the highest purity 999.9</span> and come from the <span class="golden-color">most prestigious mints</span>, accredited by the LBMA (London Bullion Market Association), which is a guarantee of their <span class="golden-color">highest quality and liquidity</span>.
-        </h3>`,
+          </h3>`,
     shortcut: "sztabka",
   },
   {
     name: "Bar 1 oz",
     id: 8,
     description: `<h3 class="product__about--description"><span class="golden-color">Golden Bar</span> in our offer is produced from gold of <span class="golden-color">the highest purity 999.9</span> and come from the <span class="golden-color">most prestigious mints</span>, accredited by the LBMA (London Bullion Market Association), which is a guarantee of their <span class="golden-color">highest quality and liquidity</span>.
-        </h3>`,
+          </h3>`,
     shortcut: "sztabka",
   },
 ]
+
+/* const goldAPI = async () => {
+  const req = await fetch("http://api.nbp.pl/api/cenyzlota")
+  const goldData = await req.json()
+  return { price: goldData[0].cena, date: goldData[0].data }
+}
+
+const goldRates = {
+  price: 268.77,
+  date: "2022-04-15",
+}
+
+const goldInfo = goldAPI().then((res) => console.log(res))
+ */
