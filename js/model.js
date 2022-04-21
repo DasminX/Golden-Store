@@ -54,16 +54,22 @@ export const products = [
   },
 ]
 
-/* const goldAPI = async () => {
-  const req = await fetch("http://api.nbp.pl/api/cenyzlota")
-  const goldData = await req.json()
-  return { price: goldData[0].cena, date: goldData[0].data }
-}
+export const goldAPI = async () => {
+  const usdReq = await fetch(
+    "http://api.nbp.pl/api/exchangerates/tables/a/today/"
+  )
+  const usdJSON = await usdReq.json()
+  const USD = usdJSON[0].rates.find((el) => el.code === "USD")
 
-const goldRates = {
-  price: 268.77,
-  date: "2022-04-15",
-}
+  const goldReq = await fetch("http://api.nbp.pl/api/cenyzlota")
+  const goldData = await goldReq.json()
 
-const goldInfo = goldAPI().then((res) => console.log(res))
- */
+  const { data, cena } = goldData[0]
+
+  const goldRates = {
+    data: data,
+    cena: (cena * 31.1034) / USD.mid,
+  }
+
+  return goldRates
+}

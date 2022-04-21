@@ -12,12 +12,12 @@ class HomePageView {
     !this.#goBackButton.classList.contains("hidden") &&
       this.#goBackButton.classList.add("hidden")
 
-    const markup = this.#generateMarkup
+    const html = this.#generateHtml
 
-    this.#contentWrapper.insertAdjacentHTML("beforeend", markup)
+    this.#contentWrapper.insertAdjacentHTML("beforeend", html)
   }
 
-  #generateMarkup() {
+  #generateHtml() {
     return `
     <button class="go-back--btn hidden"><i class="fas fa-arrow-left"></i></button>
 

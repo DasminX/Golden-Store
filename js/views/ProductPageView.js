@@ -4,6 +4,10 @@ class ProductPageView {
   #hamburger = document.querySelector(".center")
   #data
 
+  addGoBackHandler(handler) {
+    this.#goBackButton.addEventListener("click", handler)
+  }
+
   renderProductPage(data) {
     this.#data = data
     console.log(this.#data)
@@ -13,15 +17,14 @@ class ProductPageView {
     this.#goBackButton.classList.contains("hidden") &&
       this.#goBackButton.classList.remove("hidden")
 
-    const markup = this.#generateMarkup(this.#data)
+    const html = this.#generateHtml(this.#data)
 
-    this.#contentWrapper.insertAdjacentHTML("beforeend", markup)
+    this.#contentWrapper.insertAdjacentHTML("beforeend", html)
 
-    // this.#hamburger.classList.contains("hamburger__active") && showNavigation()
     window.scrollTo({ top: 0 })
   }
 
-  #generateMarkup(data) {
+  #generateHtml(data) {
     return `
     <figure class="golden-item__product ${data.shortcut} border__bottom" id=${data.id}>
     <img src="../images/${data.shortcut}.jpg" alt="" class="golden-item__product--image margin__top--15" />
