@@ -26,7 +26,7 @@ class ProductPageView {
   #generateHtml(data) {
     return `
     <figure class="golden-item__product ${data.shortcut} border__bottom" id=${data.id}>
-    <img src="../images/${data.shortcut}.jpg" alt="" class="golden-item__product--image margin__top--15" />
+    <img src=".../images/${data.shortcut}.jpg" alt="" class="golden-item__product--image margin__top--15" />
     <h3 class="golden-item__product--price">$1749.33</h3>
     <p class="golden-item__product--title">${data.name}<p>
     <div class="golden-item__product--amount flex--center font-thin-italic">
