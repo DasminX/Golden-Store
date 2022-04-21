@@ -10,7 +10,6 @@ class ProductPageView {
 
   renderProductPage(data) {
     this.#data = data
-    console.log(this.#data)
 
     this.#contentWrapper.innerHTML = ``
 
