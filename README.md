@@ -55,4 +55,3 @@ There is only a description - lorem ipsum, it's not really important for now.
 <<< SHOPPING CART, DYNAMIC GOLD PRICES, LOCAL STORAGE (no infinite fetching, remembering the place where user finished browsing when reloaded), ABOUS US SECTION >>>  
 
   <h1> * - not introduced yet <h1>
-<p>************ MORE SOON ************</p>
