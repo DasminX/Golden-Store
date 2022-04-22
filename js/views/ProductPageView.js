@@ -3,31 +3,38 @@ class ProductPageView {
   #goBackButton = document.querySelector(".go-back--btn")
   #hamburger = document.querySelector(".center")
   #data
+  #itemPrice
 
   addGoBackHandler(handler) {
     this.#goBackButton.addEventListener("click", handler)
   }
 
-  renderProductPage(data) {
+  renderProductPage(data, updatedItemsPrices) {
     this.#data = data
+
+    this.#itemPrice = updatedItemsPrices[data.id - 1].slice(1)
 
     this.#contentWrapper.innerHTML = ``
 
     this.#goBackButton.classList.contains("hidden") &&
       this.#goBackButton.classList.remove("hidden")
 
-    const html = this.#generateHtml(this.#data)
+    const html = this.#generateHtml(this.#data, this.#itemPrice)
 
     this.#contentWrapper.insertAdjacentHTML("beforeend", html)
 
     window.scrollTo({ top: 0 })
   }
 
-  #generateHtml(data) {
+  #generateHtml(data, itemPrice) {
     return `
-    <figure class="golden-item__product ${data.shortcut} border__bottom" id=${data.id}>
-    <img src="../images/${data.shortcut}.jpg" alt="" class="golden-item__product--image margin__top--15" />
-    <h3 class="golden-item__product--price">$1749.33</h3>
+    <figure class="golden-item__product ${data.shortcut} border__bottom" id=${
+      data.id
+    }>
+    <img src="./images/${
+      data.shortcut
+    }.jpg" alt="" class="golden-item__product--image margin__top--15" />
+    <h3 class="golden-item__product--price">$${itemPrice ?? ""}</h3>
     <p class="golden-item__product--title">${data.name}<p>
     <div class="golden-item__product--amount flex--center font-thin-italic">
       <h3>Amount:</h3>
@@ -37,7 +44,9 @@ class ProductPageView {
   </figure>
       
   <section class="product__about border__bottom">
-    <h2 class="product__about--header font-thin-italic flex--center golden-color shining__borders">${data.name}</h2>
+    <h2 class="product__about--header font-thin-italic flex--center golden-color shining__borders">${
+      data.name
+    }</h2>
     ${data.description}
     <br>
     <h3 class="product__about--description">It's great reflection of humans <span class="golden-color">richness</span>. Get it before others will!</h3>

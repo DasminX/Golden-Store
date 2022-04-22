@@ -13,7 +13,8 @@ const goldCourseHeight = goldCourse.clientHeight
 
 const overlay = document.querySelector(".overlay")
 const addedToCart = document.querySelector(".added-to-cart")
-const closeModalButton = document.querySelector(".btn--close")
+
+let updatedItemsPrices = []
 
 /* Show/Hide Navigation */
 
@@ -82,7 +83,7 @@ const getProductById = (id) => {
 
   hamburger.classList.contains("hamburger__active") && toggleNavigation()
 
-  ProductPageView.renderProductPage(clickedProductData)
+  ProductPageView.renderProductPage(clickedProductData, updatedItemsPrices)
 }
 
 /* Go back to main page */
@@ -112,23 +113,37 @@ const updateGoldData = async () => {
     localStorage.getItem("Gold Data and Price")
   )
 
-  const today = new Date().toISOString().split("T")[0]
+  const todayDate = new Date().toISOString().split("T")[0]
 
-  if (goldDataPriceLS.data !== today) {
+  /* Comparing todays data and data in local storage, if exists */
+  if (goldDataPriceLS?.data !== todayDate) {
     const gold = await model.goldAPI()
+    const { data, cena } = gold
+
     localStorage.setItem(
       "Gold Data and Price",
-      JSON.stringify({ data: gold.data, cena: gold.cena.toFixed(2) })
+      JSON.stringify({ data: data, cena: cena.toFixed(2) })
     )
 
-    /* jako argumenty do funkcji wrzucamy wynik zmiennej gold */
-    /* setGoldCourseData()
-    setItemsPrice() */
+    // Setting price and data according to fetched data
+    NavigationView.setGoldCourseData(data, cena.toFixed(2))
+    setItemsPrice(cena.toFixed(2))
   } else {
-    /* jako argumenty do funkcji wrzucamy wynik pozyskany z LS  */
-    /*  setGoldCourseData()
-    setItemsPrice() */
+    // Setting price and data according to data in local storage
+    NavigationView.setGoldCourseData(goldDataPriceLS.data, goldDataPriceLS.cena)
+    setItemsPrice(goldDataPriceLS.cena)
   }
+}
+
+const setItemsPrice = (pricePerOunce) => {
+  const itemsPrices = model.products.map((obj) => {
+    const itemPrice = obj.feeRatio * pricePerOunce
+    return [obj.id, itemPrice.toFixed(2)]
+  })
+
+  HomePageView.renderCurrentPrices(itemsPrices)
+
+  updatedItemsPrices = [...itemsPrices]
 }
 
 /* Initial event handling */

@@ -1,9 +1,15 @@
 class HomePageView {
   #contentWrapper = document.querySelector(".content-wrapper")
   #goBackButton = document.querySelector(".go-back--btn")
+  #pricesArr = []
 
   addClickedProductHandler(handler) {
     this.#contentWrapper.addEventListener("click", handler)
+  }
+
+  renderCurrentPrices(pricesArr) {
+    this.#pricesArr = pricesArr
+    this.renderMainPage()
   }
 
   renderMainPage() {
@@ -12,12 +18,12 @@ class HomePageView {
     !this.#goBackButton.classList.contains("hidden") &&
       this.#goBackButton.classList.add("hidden")
 
-    const html = this.#generateHtml
+    const html = this.#generateHtml(this.#pricesArr)
 
     this.#contentWrapper.insertAdjacentHTML("beforeend", html)
   }
 
-  #generateHtml() {
+  #generateHtml(pricesArr) {
     return `
     <button class="go-back--btn hidden"><i class="fas fa-arrow-left"></i></button>
 
@@ -38,42 +44,42 @@ class HomePageView {
         
         <figure class="golden-item eagle" id="1">
           <img src="./images/eagle.jpg" alt="" class="golden-item--image" />
-          <h3 class="golden-item--price">$1749.33</h3>
+          <h3 class="golden-item--price">$${pricesArr[0]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >American Eagle 1 oz.</a
           >
         </figure>
         <figure class="golden-item kangaroo" id="2">
           <img src="./images/kangaroo.jpg" alt="" class="golden-item--image" />
-          <h3 class="golden-item--price">$1822.46</h3>
+          <h3 class="golden-item--price">$${pricesArr[1]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >Australian Kangaroo 1 oz.</a
           >
         </figure>
         <figure class="golden-item philharmonic" id="3">
           <img src="./images/philharmonic.jpg" alt="" class="golden-item--image" />
-          <h3 class="golden-item--price">$1781.98</h3>
+          <h3 class="golden-item--price">$${pricesArr[2]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >Vienna Philharmonic 1 oz.</a
           >
         </figure>
         <figure class="golden-item krugerand" id="4">
           <img src="./images/krugerand.jpg" alt="" class="golden-item--image" />
-          <h3 class="golden-item--price">$1781.98</h3>
+          <h3 class="golden-item--price">$${pricesArr[3]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >Krugerrand 1 oz.</a
           >
         </figure>
         <figure class="golden-item lipa" id="5">
           <img src="./images/lipa.jpg" alt="" class="golden-item--image" />
-          <h3 class="golden-item--price">$1781.98</h3>
+          <h3 class="golden-item--price">$${pricesArr[4]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >Canadian Maple Leaf 1 oz.</a
           >
         </figure>
         <figure class="golden-item bison" id="6">
           <img src="./images/bison.jpg" alt="" class="golden-item--image" />
-          <h3 class="golden-item--price">$1781.98</h3>
+          <h3 class="golden-item--price">$${pricesArr[5]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >American Buffalo 1 oz.</a
           >
@@ -85,14 +91,14 @@ class HomePageView {
   
         <figure class="golden-item sztabka" id="7">
           <img src="./images/sztabka.jpg" alt="" class="golden-item--image" />
-          <p class="golden-item--price">$529.33</p>
+          <h3 class="golden-item--price">$${pricesArr[6]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >Golden Bar 10g</a
           >
         </figure>
         <figure class="golden-item sztabka" id="8">
           <img src="./images/sztabka.jpg" alt="" class="golden-item--image" />
-          <p class="golden-item--price">$529.33</p>
+          <h3 class="golden-item--price">$${pricesArr[7]?.slice(1) ?? ""}</h3>
           <a class="golden-item--link"
             >Golden Bar 1oz</a
           >
