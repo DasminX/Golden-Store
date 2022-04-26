@@ -1,0 +1,67 @@
+/* Navigation */ /* Navigation */
+
+.nav {
+  background-color: white;
+  border-bottom: 0.4rem dashed $golden-color;
+  font-family: $font-pacifico;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+ul {
+  list-style: none;
+
+  .nav__option {
+    color: $primary-color;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+    word-spacing: 0.3rem;
+
+    &:first-child {
+      margin-top: 1rem;
+    }
+
+    &:active {
+      background-color: $golden-color;
+    }
+
+    &[data-option="shopping-cart"] {
+      margin-bottom: 5%;
+
+      &:active {
+        background-color: white;
+      }
+
+      .go-to-shopping-cart {
+        background-color: $golden-color;
+        border: 0.1rem solid $primary-color;
+        border-radius: 5%;
+        font-family: $font-staatliches;
+        font-size: inherit;
+        letter-spacing: 0.1rem;
+        padding: 0.8em 2rem;
+        transition: 0.3s;
+        width: 80%;
+        word-spacing: 0.4rem;
+        &:active {
+          filter: brightness(1.15);
+          transform: scale(0.96);
+        }
+      }
+    }
+  }
+}
+
+.nav__gold-course {
+  border-top: 0.1rem solid $golden-color;
+  letter-spacing: 0.1rem;
+  font-family: $font-staatliches;
+  position: relative;
+  text-align: center;
+}

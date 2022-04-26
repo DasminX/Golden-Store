@@ -1,0 +1,73 @@
+/* Hamburger icon and action */ /* Hamburger icon and action */
+// https://codepen.io/Bilal1909/pen/KKdrmRP - change from hover to active
+/* Hamburger icon and action */ /* Hamburger icon and action */
+
+.hamburger {
+  cursor: pointer;
+  top: 6%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  position: fixed;
+  width: 2.5rem;
+  z-index: 101;
+}
+
+.hamburger:before,
+.hamburger:after,
+.hamburger div {
+  background-color: $primary-color;
+  content: "";
+  display: block;
+  height: 0.3rem;
+  border-radius: 0.3rem;
+  margin: 0.7rem 0;
+  transition: 0.5s;
+}
+.hamburger.hamburger__active:before {
+  transform: translateY(1.2rem) rotate(135deg);
+}
+.hamburger.hamburger__active:after {
+  transform: translateY(-1.2rem) rotate(-135deg);
+}
+.hamburger.hamburger__active div {
+  transform: scale(0);
+}
+
+/* Button go back */ /* Button go back */
+/* Button go back */ /* Button go back */
+
+.go-back--btn {
+  background-color: transparent;
+  border: none;
+  left: 0;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 4%;
+
+  i {
+    font-size: 3rem;
+  }
+}
+
+/* Golden item header */
+/* Golden item header */
+
+.golden-item--header {
+  align-self: center;
+  font-family: $font-pacifico;
+  justify-self: stretch;
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+/* Cart grid products net */
+/* Cart grid products net */
+
+.cart--grid-net {
+  display: grid;
+  font-size: 1.6rem;
+  grid-template-columns: 5fr 5fr 5fr 5fr 2fr;
+  grid-template-rows: 1fr;
+  width: 100%;
+}

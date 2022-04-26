@@ -1,7 +1,16 @@
+import eagle from "../../images/eagle.jpg"
+import kangaroo from "../../images/kangaroo.jpg"
+import bison from "../../images/bison.jpg"
+import krugerand from "../../images/krugerand.jpg"
+import lipa from "../../images/lipa.jpg"
+import philharmonic from "../../images/philharmonic.jpg"
+import sztabka from "../../images/sztabka.jpg"
+
+const images = [eagle, kangaroo, bison, krugerand, lipa, philharmonic, sztabka]
+
 class ProductPageView {
   #contentWrapper = document.querySelector(".content-wrapper")
   #goBackButton = document.querySelector(".go-back--btn")
-  #hamburger = document.querySelector(".center")
   #data
   #itemPrice
 
@@ -31,15 +40,16 @@ class ProductPageView {
     <figure class="golden-item__product ${data.shortcut} border__bottom" id=${
       data.id
     }>
-    <img src="./images/${
-      data.shortcut
-    }.jpg" alt="" class="golden-item__product--image margin__top--15" />
-    <h3 class="golden-item__product--price">$${itemPrice ?? ""}</h3>
+    <img src="${images.find((img) =>
+      img.split("/").at(-1).split(".")[0] === data.shortcut ? img : false
+    )}" alt="" class="golden-item__product--image margin__top--15" />
+    <h3 class="golden-item__product--price">$${itemPrice ?? "Loading..."}</h3>
     <p class="golden-item__product--title">${data.name}<p>
     <div class="golden-item__product--amount flex--center font-thin-italic">
       <h3>Amount:</h3>
-      <input type="number" min="1" max="10" value="1">
-      </div>
+      <input class="amount-input" type="number" min="1" max="10" value="1">
+    </div>
+    <div class="error-amount--container"></div>
     <button class="add-to-cart golden-color shining__borders">Add to cart <i class="fas fa-shopping-cart"></i></button>
   </figure>
       

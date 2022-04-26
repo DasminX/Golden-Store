@@ -1,5 +1,5 @@
 class NavigationView {
-  #hamburger = document.querySelector(".center")
+  #hamburger = document.querySelector(".hamburger")
   #listContainer = document.querySelector(".list__container")
   #navGoldInfo = document.querySelector(".nav__gold-course > h4")
 

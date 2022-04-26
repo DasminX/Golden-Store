@@ -1,4 +1,19 @@
 /* Data structures */
+export const goldAPI = async () => {
+  const goldReq = await fetch(
+    `https://api.metalpriceapi.com/v1/latest?api_key=${process.env.GOLD_API_KEY}&base=XAU&currencies=USD`
+  )
+  const goldData = await goldReq.json()
+
+  const { USD } = goldData.rates
+
+  const goldRates = {
+    date: goldData.timestamp,
+    price: USD,
+  }
+
+  return goldRates
+}
 
 export const products = [
   {
@@ -50,7 +65,7 @@ export const products = [
     description: `<h3 class="product__about--description"><span class="golden-color">Golden Bar</span> in our offer is produced from gold of <span class="golden-color">the highest purity 999.9</span> and come from the <span class="golden-color">most prestigious mints</span>, accredited by the LBMA (London Bullion Market Association), which is a guarantee of their <span class="golden-color">highest quality and liquidity</span>.
           </h3>`,
     shortcut: "sztabka",
-    feeRatio: 1.07,
+    feeRatio: 1.07 / 3.105,
   },
   {
     name: "Bar 1 oz",
@@ -58,26 +73,8 @@ export const products = [
     description: `<h3 class="product__about--description"><span class="golden-color">Golden Bar</span> in our offer is produced from gold of <span class="golden-color">the highest purity 999.9</span> and come from the <span class="golden-color">most prestigious mints</span>, accredited by the LBMA (London Bullion Market Association), which is a guarantee of their <span class="golden-color">highest quality and liquidity</span>.
           </h3>`,
     shortcut: "sztabka",
-    feeRatio: 1.054,
+    feeRatio: 1.044,
   },
 ]
 
-export const goldAPI = async () => {
-  const usdReq = await fetch(
-    "http://api.nbp.pl/api/exchangerates/tables/a/today/"
-  )
-  const usdJSON = await usdReq.json()
-  const USD = usdJSON[0].rates.find((el) => el.code === "USD")
-
-  const goldReq = await fetch("http://api.nbp.pl/api/cenyzlota")
-  const goldData = await goldReq.json()
-
-  const { data, cena } = goldData[0]
-
-  const goldRates = {
-    data: data,
-    cena: (cena * 31.1034) / USD.mid,
-  }
-
-  return goldRates
-}
+export const shoppingCart = []

@@ -1,4 +1,3 @@
-<!-- TODO: POSPRZATAC W CSS - ZROBIC WIECEJ GLOBALI, UPORZADKOWANIE NAZW / KLAS -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,20 +7,20 @@
     <title>WebDev</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
-    <link rel="stylesheet" href="./css/style.css" />
+    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
   </head>
   <body>
     
     <div class="overlay hidden"></div>
     <div class="modal added-to-cart flex hidden ">
-      <h2 class="added-to-cart--heading">You've added an item to cart!</h2>
-      <h4 class="added-to-cart--paragraph ">Currently you've got 2 items in your cart!</h4>
+      <h2 class="added-to-cart--heading"></h2>
+      <h4 class="added-to-cart--paragraph ">Currently you've got <span class="added-to-cart--amount"></span> in your cart!</h4>
       <button class="added-to-cart--btn go-to-cart golden-color shining__borders margin__top--15">Go to shopping cart <i class="fas fa-shopping-cart" title="Go to Shopping Cart"></i></button>
       <button class="added-to-cart--btn btn--close golden-color shining__borders">Close</button>
     </div>
 
       <!-- Hamburger menu -->
-      <div class="center"><div></div></div>
+      <div class="hamburger"><div></div></div>
 
       <!-- Nav -->
       <nav class="nav">
@@ -30,9 +29,7 @@
           <li class="nav__option" data-option="bars"> Golden bars </li>
           <li class="nav__option" data-option="about"> About us </li>
           <li class="nav__option" data-option="terms"> Terms and conditions </li>
-          <button class="nav__button">
-            <i class="fas fa-shopping-cart" title="Go to Shopping Cart"></i>
-          </button>
+          <li class="nav__option" data-option="shopping-cart"><button class="go-to-shopping-cart">Go to shopping cart</button></li>
         </ul>
         
         <div class="nav__gold-course">
@@ -40,17 +37,15 @@
         </div>
       </nav>
 
-      <button class="go-back--btn"><i class="fas fa-arrow-left"></i></button>
+      <button class="go-back--btn flex--center"><i class="fas fa-arrow-left"></i></button>
       
     <div class="content-wrapper"></div>
 
        <footer class="copyright golden-color">
          <h3 class="made-by font-weight-700">&copy; Made by DasminX - WebDev.</h3> 
-         <h4 class="dont-copy font-thin-italic">Don't copy that, unless you want to
-          hire me.</h4>
+         <h4 class="dont-copy font-thin-italic">Don't copy that, unless you want to hire me.</h4>
       </footer> 
 
     </div>
-    <script type="module" src="./js/controller.js"></script>
   </body>
 </html>
