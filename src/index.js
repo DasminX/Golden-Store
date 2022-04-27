@@ -43,7 +43,9 @@ const toggleNavigation = () => {
 }
 
 const hideNavigationInit = () => {
-  nav.style.top = `-${navHeight - goldCourseHeight}px`
+  setTimeout(() => {
+    nav.style.top = `-${navHeight - goldCourseHeight}px`
+  }, 1)
 }
 
 /////////////////////////////////
