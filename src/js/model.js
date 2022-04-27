@@ -1,7 +1,7 @@
 /* Data structures */
 export const goldAPI = async () => {
   const goldReq = await fetch(
-    `https://api.metalpriceapi.com/v1/latest?api_key=${process.env.GOLD_API_KEY}&base=XAU&currencies=USD`
+    `https://api.metalpriceapi.com/v1/latest?api_key=${process.env.GOLD_API_K}&base=XAU&currencies=USD`
   )
   const goldData = await goldReq.json()
 

@@ -1,7 +1,7 @@
 {
   "name": "golden-store",
   "description": "<h1>It's in progress</h1>",
-  "version": "1.0.0",
+  "version": "2.0.7",
   "main": "index.js",
   "devDependencies": {
     "@babel/core": "^7.17.8",
