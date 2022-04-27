@@ -1,5 +1,14 @@
 ﻿# Golden-Store
 
+<h1> https://dasminx-goldenstore.netlify.app/ </h1>
+
+
+
+
+
+
+
+
 <h1>It's in progress</h1>
 
 This project is a website, where I'll simulate an online shop
