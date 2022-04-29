@@ -361,5 +361,5 @@ const init = () => {
   window.addEventListener("load", updateGoldData)
 }
 
-init()
+window.addEventListener("DOMContentLoaded", init)
 hideNavigationInit()

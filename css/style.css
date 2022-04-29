@@ -584,7 +584,6 @@ ul .nav__option[data-option="shopping-cart"] .go-to-shopping-cart:active {
   margin-bottom: 15%;
 }
 
-/* TODO: IMPROVE ANIMATION */
 .overlay {
   background-color: #222;
   bottom: 0;
