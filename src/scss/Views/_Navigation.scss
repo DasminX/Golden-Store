@@ -9,6 +9,10 @@
   top: 0;
   width: 100%;
   z-index: 100;
+   
+  &.hiddenNav {
+    transform: translateY(calc(-100% + 16px + 0.4rem));
+  }
 }
 
 ul {
