@@ -353,4 +353,3 @@ const init = () => {
 }
 
 init()
-hideNavigationInit()
