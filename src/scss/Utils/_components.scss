@@ -67,7 +67,22 @@
 .cart--grid-net {
   display: grid;
   font-size: 1.6rem;
-  grid-template-columns: 5fr 5fr 5fr 5fr 2fr;
+  grid-template-columns: repeat(4, 5fr) 2fr;
   grid-template-rows: 1fr;
   width: 100%;
+}
+
+@media (min-height: 600px) and (min-width: 1024px) {
+  .hamburger {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .go-back--btn {
+    top: 15%;
+
+    i {
+      font-size: 3.6rem;
+    }
+  }
 }

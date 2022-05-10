@@ -24,3 +24,39 @@ body {
   overflow-x: hidden;
   margin: 0 auto;
 }
+
+@media screen and (min-width: 390px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 77.5%;
+  }
+}
+
+@media screen and (min-width: 890px) {
+  html {
+    font-size: 107.5%;
+  }
+}
+
+@media (min-height: 600px) and (min-width: 1024px) {
+  html {
+    font-size: 62.5%;
+  }
+}
+
+@media (min-height: 900px) and (min-width: 1440px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+@media (min-height: 1080px) and (min-width: 1920px) {
+  html {
+    font-size: 85%;
+  }
+}

@@ -9,9 +9,17 @@
   top: 0;
   width: 100%;
   z-index: 100;
+
+  &.hiddenNav {
+    transform: translateY(calc(-100% + 2rem));
+  }
 }
 
 ul {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   list-style: none;
 
   .nav__option {
@@ -45,7 +53,7 @@ ul {
         font-family: $font-staatliches;
         font-size: inherit;
         letter-spacing: 0.1rem;
-        padding: 0.8em 2rem;
+        padding: 0.8rem 2rem;
         transition: 0.3s;
         width: 80%;
         word-spacing: 0.4rem;
@@ -64,4 +72,47 @@ ul {
   font-family: $font-staatliches;
   position: relative;
   text-align: center;
+}
+
+@media (min-height: 600px) and (min-width: 1024px) {
+  .nav {
+    position: relative;
+
+    &.hiddenNav {
+      transform: translateY(0);
+    }
+  }
+
+  ul {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.4rem 0.6rem;
+
+    .nav__option {
+      flex-grow: 1;
+      font-size: 1.6rem;
+      padding: 0.6rem 0.3rem;
+      width: 15%;
+
+      &[data-option="shopping-cart"] {
+        flex-grow: 3;
+        margin-bottom: 0;
+
+        &:active {
+          background-color: white;
+        }
+
+        .go-to-shopping-cart {
+          padding: 1.2rem;
+          word-spacing: 0.3rem;
+        }
+      }
+    }
+  }
+
+  .nav__gold-course {
+    border-top: 0.4rem dashed $golden-color;
+    word-spacing: 0.3rem;
+    padding: 0.6rem 0;
+  }
 }

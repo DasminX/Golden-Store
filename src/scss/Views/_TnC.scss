@@ -10,3 +10,9 @@
     @extend .product__about--description;
   }
 }
+
+@media (min-height: 600px) and (min-width: 1024px) {
+  .terms_and_conditions {
+    margin-top: 15%;
+  }
+}

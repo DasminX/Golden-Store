@@ -1,38 +1,87 @@
 /* Main */ /* Main */
 
-.golden-coins__container {
-    display: grid;
-    grid-template-rows: 1fr repeat(3, 3fr);
+.golden-items__container {
+  display: grid;
+  grid-template-rows: 1fr repeat(3, 3fr);
+  justify-items: center;
+  width: 100%;
+}
+
+.golden-bars__container {
+  @extend .golden-items__container;
+  grid-template-rows: 1fr repeat(2, 3fr);
+}
+
+.golden-item {
+  flex-wrap: wrap;
+  margin: 5rem auto;
+  text-align: center;
+  width: 100%;
+
+  &--image {
+    object-fit: cover;
+    width: 75%;
+  }
+
+  &--price {
+    background-color: $golden-color;
+    font-size: 1.6rem;
+    margin: 0.4rem auto;
+    width: 50%;
+  }
+
+  &--link {
+    color: $primary-color;
+    font-size: 1.8rem;
+    text-decoration: underline;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .golden-items__container {
+    grid-template-rows: 1fr repeat(2, 2fr);
+    grid-template-columns: repeat(2, 1fr);
     justify-items: center;
-    width: 100%;
   }
-  
+
   .golden-bars__container {
-    @extend .golden-coins__container;
-    grid-template-rows: 1fr repeat(2, 3fr);
+    grid-template-rows: 1fr 2fr;
   }
-  
+
   .golden-item {
-    flex-wrap: wrap;
-    margin: 5rem auto;
-    text-align: center;
-    width: 100%;
-  
+    &--header {
+      grid-column: 1/-1;
+    }
+  }
+}
+
+@media (min-height: 600px) and (min-width: 1024px) {
+  .golden-item {
     &--image {
       object-fit: cover;
-      width: 75%;
-    }
-  
-    &--price {
-      background-color: $golden-color;
-      font-size: 1.6rem;
-      margin: 0.4rem auto;
-      width: 50%;
-    }
-  
-    &--link {
-      color: $primary-color;
-      font-size: 1.8rem;
-      text-decoration: underline;
+      width: 55%;
     }
   }
+}
+
+@media (min-height: 768px) and (min-width: 1280px) {
+  .golden-items__container {
+    grid-template-rows: 1fr repeat(2, 2fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .golden-bars__container {
+    grid-template-rows: 1fr 2fr;
+  }
+
+  .golden-item {
+    &--header {
+      margin: 0 auto;
+      width: 80%;
+    }
+
+    &--image {
+      width: 45%;
+    }
+  }
+}

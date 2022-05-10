@@ -36,6 +36,7 @@
     font-family: $font-pacifico;
     font-size: 200%;
     margin-top: 10%;
+    margin-bottom: 10%;
   }
 
   &--btn {
@@ -48,6 +49,39 @@
 
     &:active {
       transform: scale(0.96);
+    }
+  }
+}
+
+@media (min-height: 600px) and (min-width: 1024px) {
+  .added-to-cart {
+    padding: 3rem 2rem 4rem;
+    width: 70%;
+
+    &--heading {
+      margin-top: 3%;
+    }
+
+    &--paragraph {
+      font-size: 200%;
+      width: 100%;
+    }
+  }
+}
+
+@media (min-height: 768px) and (min-width: 1280px) {
+  .added-to-cart {
+    padding: 3rem 2rem 4rem;
+    width: 60%;
+
+    &--paragraph {
+      font-size: 200%;
+      width: 100%;
+    }
+
+    &--btn {
+      margin-bottom: 5%;
+      width: 65%;
     }
   }
 }

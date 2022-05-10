@@ -13,9 +13,6 @@ const contentWrapper = document.querySelector(".content-wrapper")
 
 const hamburger = document.querySelector(".hamburger")
 const nav = document.querySelector(".nav")
-const goldCourse = nav.querySelector(".nav__gold-course")
-const navHeight = nav.clientHeight
-const goldCourseHeight = goldCourse.clientHeight
 
 const overlay = document.querySelector(".overlay")
 const addedToCart = document.querySelector(".added-to-cart")
@@ -36,14 +33,8 @@ const toggleNavigation = () => {
     ? hamburger.classList.remove("hamburger__active")
     : hamburger.classList.add("hamburger__active")
 
-  if (nav.style.top === `-${navHeight - goldCourseHeight}px`)
-    nav.style.top = `0px`
-  else if (nav.style.top === `0px`)
-    nav.style.top = `-${navHeight - goldCourseHeight}px`
-}
-
-const hideNavigationInit = () => {
-  nav.style.top = `-${navHeight - goldCourseHeight}px`
+  if (nav.classList.contains("hiddenNav")) nav.classList.remove("hiddenNav")
+  else nav.classList.add("hiddenNav")
 }
 
 /////////////////////////////////
